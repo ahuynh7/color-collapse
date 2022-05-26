@@ -1,11 +1,11 @@
 # App
+bin/*.bat
 build
 cache/*
 config/secrets.jl
 docs/build
 log/*
 sessions/*
-!*.gitkeep
 Manifest.toml
 
 # Vagrant
