@@ -1,9 +1,9 @@
-using Genie.Router
+using Genie.Router, Stipple
 
 route("/") do
-	serve_static_file("welcome.html")
+	serve_static_file("index.html")
 end
 
 route("/hello") do
-	"asds"
+	nothing
 end
