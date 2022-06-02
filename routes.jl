@@ -2,10 +2,9 @@ using Genie.Router, Genie.Renderer
 using Stipple, Stipple.Elements, Stipple.Layout
 using StippleUI
 
-include("src/models/Field.jl")
+include("src/models/Field.jl"); using .Models
+include("src/models/Pixel.jl"); using .Models
 
-using .Models
-  
 function ui(model)
 	page(model, title="Color Collapse", [
 			span("", @text(:x))
@@ -14,5 +13,7 @@ function ui(model)
 end
 
 route("/") do
-	Field |> init |> ui |> html
-end 
+	model = init(Field, debounce=0)
+	
+	model |> ui |> html		#returns the final page rendering
+end
