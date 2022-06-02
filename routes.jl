@@ -2,15 +2,13 @@ using Genie.Router, Genie.Renderer
 using Stipple, Stipple.Elements, Stipple.Layout
 using StippleUI
 
-import Genie.Renderer.Html: html_to_julia
+include("src/models/Field.jl")
 
-import Models: Field
+using .Models
   
 function ui(model)
 	page(model, title="Color Collapse", [
-			h1([
-				"Hello "
-			])
+			span("", @text(:x))
 		]
 	)
 end
