@@ -2,12 +2,11 @@ using Genie.Router, Genie.Renderer
 using Stipple, Stipple.Elements, Stipple.Layout
 using StippleUI
 
-include("src/models/Field.jl"); using .Models
-include("src/models/Pixel.jl"); using .Models
+include("src/Models.jl"); using .Models: Field
 
 function ui(model)
 	page(model, title="Color Collapse", [
-			span("", @text(:x))
+			span("", @text(:grid))
 		]
 	)
 end
